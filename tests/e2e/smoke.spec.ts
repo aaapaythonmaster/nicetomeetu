@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 
-test("renders the unpublished state", async ({ page }) => {
+test("renders the public portfolio when no database revision is published", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "个人主页尚未发布" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "张昕蕊" })).toBeVisible();
+  await expect(page.getByRole("region", { name: "实习经历轮播" })).toBeVisible();
 });
