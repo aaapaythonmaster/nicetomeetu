@@ -13,7 +13,7 @@ export function ResumeHome({ data, detailBasePath }: { data: PublishedSiteData; 
   const [selected, setSelected] = useState(internshipIndex);
   const section = sections[selected];
   return <div className="grid flex-1 grid-cols-[1.08fr_0.92fr] items-stretch pt-8">
-    <section className="flex items-center border-r border-white/10 pr-[6vw]"><SectionSummary section={section} detailHref={detailBasePath ? `${detailBasePath}/${section.kind}` : undefined} /></section>
+    <section className="flex items-center pr-[6vw]"><SectionSummary section={section} detailHref={detailBasePath ? `${detailBasePath}/${section.kind}` : undefined} /></section>
     <section className="relative min-h-[620px]"><OptionWheel {...data.appearance.optionWheel} items={sections.map((item) => SECTION_LABELS[item.kind])} defaultSelected={internshipIndex} onChange={(index) => setSelected(index)} side="right" ariaLabel="简历经历分类" textColor="#8b8792" activeColor={data.appearance.primaryColor} /></section>
   </div>;
 }

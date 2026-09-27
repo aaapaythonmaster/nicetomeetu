@@ -22,6 +22,7 @@ export type ColorBendsSettings = z.infer<typeof colorBendsSettingsSchema>;
 export const dotFieldSettingsSchema = z.object({
   dotRadius: z.number().positive().max(10),
   dotSpacing: z.number().positive().max(100),
+  dotOpacity: z.number().min(0).max(1).default(0.32),
   cursorRadius: z.number().positive().max(2_000),
   cursorForce: z.number().min(-2).max(2),
   bulgeOnly: z.boolean(),
@@ -30,6 +31,7 @@ export const dotFieldSettingsSchema = z.object({
   waveAmplitude: z.number().min(0).max(100),
   sparkle: z.boolean(),
   glowColor: hexColorSchema,
+  glowOpacity: z.number().min(0).max(1).default(0.1),
   gradientFrom: hexColorSchema.optional(),
   gradientTo: hexColorSchema.optional(),
 });
@@ -92,7 +94,8 @@ export const DEFAULT_APPEARANCE: AppearanceSettings = {
   },
   dotField: {
     dotRadius: 1.5,
-    dotSpacing: 14,
+    dotSpacing: 22,
+    dotOpacity: 0.32,
     cursorRadius: 500,
     cursorForce: 0.1,
     bulgeOnly: true,
@@ -100,7 +103,8 @@ export const DEFAULT_APPEARANCE: AppearanceSettings = {
     glowRadius: 160,
     sparkle: false,
     waveAmplitude: 0,
-    glowColor: "#120f17",
+    glowColor: "#06b6d4",
+    glowOpacity: 0.1,
   },
   optionWheel: {
     fontSize: 3,

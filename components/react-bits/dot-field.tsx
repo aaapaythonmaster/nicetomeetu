@@ -8,6 +8,7 @@ const TWO_PI = Math.PI * 2;
 export interface DotFieldProps extends HTMLAttributes<HTMLDivElement> {
   dotRadius?: number;
   dotSpacing?: number;
+  dotOpacity?: number;
   cursorRadius?: number;
   cursorForce?: number;
   bulgeOnly?: boolean;
@@ -18,15 +19,16 @@ export interface DotFieldProps extends HTMLAttributes<HTMLDivElement> {
   gradientFrom?: string;
   gradientTo?: string;
   glowColor?: string;
+  glowOpacity?: number;
 }
 
 interface Dot { ax: number; ay: number; sx: number; sy: number; vx: number; vy: number; x: number; y: number }
 
 export const DotField = memo(function DotField({
-  dotRadius = 1.5, dotSpacing = 14, cursorRadius = 500, cursorForce = 0.1,
+  dotRadius = 1.5, dotSpacing = 22, dotOpacity = 0.32, cursorRadius = 500, cursorForce = 0.1,
   bulgeOnly = true, bulgeStrength = 67, glowRadius = 160, sparkle = false,
   waveAmplitude = 0, gradientFrom = "rgba(168, 85, 247, 0.35)",
-  gradientTo = "rgba(180, 151, 207, 0.25)", glowColor = "#120F17", className = "", ...rest
+  gradientTo = "rgba(180, 151, 207, 0.25)", glowColor = "#06b6d4", glowOpacity = 0.1, className = "", ...rest
 }: DotFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const glowRef = useRef<SVGCircleElement>(null);
@@ -34,12 +36,12 @@ export const DotField = memo(function DotField({
   const mouseRef = useRef({ x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 });
   const rafRef = useRef<number | null>(null);
   const sizeRef = useRef({ w: 0, h: 0, offsetX: 0, offsetY: 0 });
-  const glowOpacity = useRef(0);
+  const glowEngagementOpacity = useRef(0);
   const engagement = useRef(0);
-  const propsRef = useRef({ dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo });
+  const propsRef = useRef({ dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo, glowOpacity });
   const rebuildRef = useRef<(() => void) | null>(null);
   const glowId = `dot-field-glow-${useId().replaceAll(":", "")}`;
-  propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo };
+  propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo, glowOpacity };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -104,8 +106,8 @@ export const DotField = memo(function DotField({
       engagement.current += (targetEngagement - engagement.current) * 0.06;
       if (engagement.current < 0.001) engagement.current = 0;
       const engaged = engagement.current;
-      glowOpacity.current += (engaged - glowOpacity.current) * 0.08;
-      if (glowEl) { glowEl.setAttribute("cx", String(mouse.x)); glowEl.setAttribute("cy", String(mouse.y)); glowEl.style.opacity = String(glowOpacity.current); }
+      glowEngagementOpacity.current += (engaged - glowEngagementOpacity.current) * 0.08;
+      if (glowEl) { glowEl.setAttribute("cx", String(mouse.x)); glowEl.setAttribute("cy", String(mouse.y)); glowEl.style.opacity = String(glowEngagementOpacity.current * p.glowOpacity); }
       ctx.clearRect(0, 0, w, h);
       const gradient = ctx.createLinearGradient(0, 0, w, h);
       gradient.addColorStop(0, p.gradientFrom); gradient.addColorStop(1, p.gradientTo); ctx.fillStyle = gradient;
@@ -147,7 +149,7 @@ export const DotField = memo(function DotField({
   useEffect(() => { rebuildRef.current?.(); }, [dotRadius, dotSpacing]);
 
   return <div className={`dot-field-container${className ? ` ${className}` : ""}`} {...rest}>
-    <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} />
+    <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: dotOpacity }} />
     <svg aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
       <defs><radialGradient id={glowId}><stop offset="0%" stopColor={glowColor} /><stop offset="100%" stopColor="transparent" /></radialGradient></defs>
       <circle ref={glowRef} cx="-9999" cy="-9999" r={glowRadius} fill={`url(#${glowId})`} style={{ opacity: 0, willChange: "opacity" }} />

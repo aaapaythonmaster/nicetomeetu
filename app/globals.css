@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("/fonts/NotoSansCJKsc-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
 :root {
   --background: #120f17;
   --foreground: #f8fafc;
@@ -8,16 +14,18 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 :is(a, button, input):focus-visible {
   outline: 2px solid var(--accent-color, #22d3ee) !important;
   outline-offset: 3px;
 }
+
+nextjs-portal { display: none !important; }
