@@ -1,8 +1,6 @@
 import { Suspense } from "react";
 
-import { ProfileHeader } from "@/components/public/profile-header";
-import { ResumeHome } from "@/components/public/resume-home";
-import { DynamicBackground } from "@/components/visual/dynamic-background";
+import { RoomHome } from "@/components/public/room-home";
 import { getPublishedSiteData } from "@/src/features/resume/queries";
 
 export default function HomePage() {
@@ -11,7 +9,7 @@ export default function HomePage() {
 
 async function PublishedHome() {
   const data = await getPublishedSiteData();
-  if (data) return <DynamicBackground settings={data.appearance}><main className="mx-auto flex min-h-screen max-w-[1600px] flex-col px-[5vw] py-8"><ProfileHeader data={data} /><ResumeHome data={data} /></main></DynamicBackground>;
+  if (data) return <RoomHome data={data} />;
   return (
     <main className="grid min-h-screen place-items-center bg-[#120f17] px-8 text-white">
       <section className="max-w-xl text-center">

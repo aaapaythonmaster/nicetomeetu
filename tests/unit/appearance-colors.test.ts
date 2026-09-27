@@ -26,9 +26,12 @@ describe("appearance defaults", () => {
       },
       dotField: {
         dotRadius: 1.5,
-        dotSpacing: 14,
+        dotSpacing: 22,
+        dotOpacity: 0.32,
         cursorRadius: 500,
         bulgeStrength: 67,
+        glowColor: "#06b6d4",
+        glowOpacity: 0.1,
       },
       optionWheel: {
         fontSize: 3,

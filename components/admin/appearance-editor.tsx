@@ -92,10 +92,12 @@ export function AppearanceEditor({ initialSettings, sourceStatus }: { initialSet
       <Section eyebrow="Effect 02" title="Dot Field">
         <NumericField label="Dot Radius" value={settings.dotField.dotRadius} min={0.1} max={10} onChange={(v) => updateDotField("dotRadius", v)} />
         <NumericField label="Dot Spacing" value={settings.dotField.dotSpacing} min={0.1} max={100} onChange={(v) => updateDotField("dotSpacing", v)} />
+        <NumericField label="Dot Opacity" value={settings.dotField.dotOpacity} min={0} max={1} step={0.01} onChange={(v) => updateDotField("dotOpacity", v)} />
         <NumericField label="Cursor Radius" value={settings.dotField.cursorRadius} min={1} max={2000} step={1} onChange={(v) => updateDotField("cursorRadius", v)} />
         <NumericField label="Cursor Force" value={settings.dotField.cursorForce} min={-2} max={2} onChange={(v) => updateDotField("cursorForce", v)} />
         <NumericField label="Bulge Strength" value={settings.dotField.bulgeStrength} min={0} max={200} step={1} onChange={(v) => updateDotField("bulgeStrength", v)} />
         <NumericField label="Glow Radius" value={settings.dotField.glowRadius} min={0} max={1000} step={1} onChange={(v) => updateDotField("glowRadius", v)} />
+        <NumericField label="Glow Opacity" value={settings.dotField.glowOpacity} min={0} max={1} step={0.01} onChange={(v) => updateDotField("glowOpacity", v)} />
         <NumericField label="Wave Amplitude" value={settings.dotField.waveAmplitude} min={0} max={100} onChange={(v) => updateDotField("waveAmplitude", v)} />
         <ToggleField label="Bulge Only" checked={settings.dotField.bulgeOnly} onChange={(v) => updateDotField("bulgeOnly", v)} />
         <ToggleField label="Sparkle" checked={settings.dotField.sparkle} onChange={(v) => updateDotField("sparkle", v)} />

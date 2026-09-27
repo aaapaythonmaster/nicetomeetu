@@ -2,6 +2,12 @@ import { expect, test } from "@playwright/test";
 
 test.use({ extraHTTPHeaders: { "x-e2e-public-fixture": "1" } });
 
+test("keeps the homepage columns visually open without a center divider", async ({ page }) => {
+  await page.goto("/");
+
+  await expect(page.locator("main section").first()).toHaveCSS("border-right-width", "0px");
+});
+
 test("navigates from homepage summaries to shareable detail selections", async ({ page }) => {
   const errors: string[] = [];
   page.on("console", (message) => { if (message.type() === "error") errors.push(message.text()); });
