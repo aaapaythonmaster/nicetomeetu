@@ -172,7 +172,7 @@ export function RoomHome({ data }: { data: PublishedSiteData }) {
       />
       <section className="room-home__hud" aria-label="个人主页入口">
         <div className="room-home__title-block">
-          <p>{data.identity.targetRole} · PORTFOLIO</p>
+          <p>PORTFOLIO</p>
           <h1>{data.identity.name}</h1>
           <span>把复杂的事情，做成清晰的体验。</span>
           <button type="button" className="room-home__intro-action" onClick={greet}>和我打个招呼 <b aria-hidden="true">↗</b></button>

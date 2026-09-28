@@ -25,6 +25,8 @@ describe("RoomHome internship carousel", () => {
   it("shows internships, supports manual navigation, and pauses autoplay on hover", () => {
     render(<RoomHome data={createPublicFixture()} />);
 
+    expect(screen.getByText("PORTFOLIO")).toBeInTheDocument();
+    expect(screen.queryByText(/AI 产品与流程运营/)).not.toBeInTheDocument();
     const carousel = screen.getByRole("region", { name: "实习经历轮播" });
     expect(screen.getByRole("heading", { name: "鲸锐 AI 影视智作产品实习" })).toBeInTheDocument();
 

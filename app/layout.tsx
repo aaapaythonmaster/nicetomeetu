@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "张昕蕊｜个人简历",
+  title: "xinrui's portfolio",
   description: "张昕蕊的产品与运营个人简历网站",
 };
 
