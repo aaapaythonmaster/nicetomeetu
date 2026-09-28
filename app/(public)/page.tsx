@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { connection } from "next/server";
 
 import { RoomHome } from "@/components/public/room-home";
 import { createPublicFixture } from "@/src/features/resume/public-mapping";
@@ -9,6 +10,7 @@ export default function HomePage() {
 }
 
 export async function PublishedHome() {
+  await connection();
   const data = (await getPublishedSiteData()) ?? createPublicFixture();
   return <RoomHome data={data} />;
 }
