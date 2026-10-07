@@ -78,3 +78,13 @@ Preserve the supplied React Bits algorithms and expose their established paramet
 ## Viewport
 
 The approved scope is desktop browsers. Design and visual QA against **1440×900** as the primary reference viewport; the full-screen preview must occupy the viewport without introducing an inset app frame.
+
+## Folder detail layout invariants
+
+- The detail-page folder graphic, return action, and section navigation must remain in normal flex/grid flow. Do not use directional offsets or negative margins to align them.
+- The left navigation rail keeps explicit vertical gaps between the return action, folder graphic, and section navigation; these components must never overlap at any supported viewport.
+- The selected folder uses a component size that fits the rail intrinsically. Do not visually scale a larger folder into a smaller layout box.
+- Changes to any detail section must be checked across internships, projects, education, and skills so the folder position and navigation alignment remain identical.
+- Projects, education, and skills share one compact paper geometry: no more than `820px × 560px` at the 1440×900 reference viewport. Internship content may use the full-height card, but switching sections must not move the outer viewer or left rail.
+- Compact-detail typography follows a fixed hierarchy: 40px/600 section title, 24px/600 entry title, 15px body or summary, 12px metadata, and 11px tracked labels.
+- A single metric or award is an inline result row, never a large filled card. Sparse content is vertically composed inside the compact paper rather than padded with decorative empty containers.
