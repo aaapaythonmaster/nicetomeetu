@@ -102,17 +102,23 @@
   pointer-events: auto;
 }
 
-.room-home__internship-carousel { max-width: 510px; padding-bottom: 26px; }
-.room-home__internship-heading { color: #9a5c3f; }
-.room-home__internship-heading p { margin: 0; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; }
+.room-home__internship-carousel { width: 100%; max-width: none; padding-bottom: 26px; }
+.room-home__internship-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 14px; color: #633c2b; }
+.room-home__internship-heading p { margin: 0; color: #9a5c3f; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; }
+.room-home__internship-carousel > .room-home__internship-heading { margin-left: -20px; }
+.room-home__internship-carousel > .room-home__internship-heading p { font-size: calc(0.76rem + 4px); }
 .room-home__internship-slide { min-height: 330px; animation: room-internship-in 380ms ease-out both; }
-.room-home__internship-slide h2 { max-width: 22ch; margin: 18px 0 12px; color: #3f281a; font-size: clamp(1.9rem, 2.25vw, 2.55rem); font-weight: 560; letter-spacing: -0.045em; line-height: 1.15; text-wrap: balance; }
-.room-home__internship-meta { max-width: 42ch; margin: 0; color: rgb(63 40 26 / 0.62); font-size: 0.76rem; line-height: 1.6; }
-.room-home__internship-meta span, .room-home__internship-meta time { display: block; }
-.room-home__internship-meta time { margin-top: 3px; }
-.room-home__internship-proof { display: -webkit-box; max-width: 46ch; margin: 22px 0 0; overflow: hidden; color: rgb(63 40 26 / 0.82); font-size: 0.98rem; font-weight: 420; line-height: 1.78; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
-.room-home__internship-slide > strong { display: flex; align-items: baseline; gap: 12px; margin-top: 24px; color: #8d4e3a; font-size: 1.55rem; font-weight: 560; letter-spacing: -0.035em; }
-.room-home__internship-slide > strong small { color: rgb(141 78 58 / 0.72); font-size: 0.65rem; font-weight: 650; letter-spacing: 0.08em; }
+.room-home__internship-summary-brand { display: flex; align-items: center; gap: 14px; color: #8d4e3a; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.03em; }
+.room-home__summary-logo { display: grid; width: 92px; height: 34px; overflow: hidden; place-items: center start; background: transparent; }
+.room-home__summary-logo img { display: block; width: 88px; height: 30px; object-fit: contain; object-position: left center; mix-blend-mode: multiply; opacity: 0.94; }
+.room-home__summary-logo.is-grid { width: 96px; height: 32px; background: #68783a; }
+.room-home__summary-logo.is-grid img { width: 94px; height: 27px; mix-blend-mode: normal; opacity: 1; }
+.room-home__internship-slide h2 { max-width: 34ch; margin: 18px 0 12px; color: #3f281a; font-size: clamp(1.55rem, 1.9vw, 2rem); font-weight: 560; letter-spacing: -0.04em; line-height: 1.2; text-wrap: balance; }
+.room-home__internship-meta { max-width: 42ch; margin: 0; color: rgb(63 40 26 / 0.66); font-size: 0.94rem; line-height: 1.6; }
+.room-home__internship-meta time { display: block; margin-top: 3px; }
+.room-home__internship-proof { display: -webkit-box; width: 100%; max-width: none; margin: 22px 0 0; overflow: hidden; color: rgb(63 40 26 / 0.84); font-size: 0.9rem; font-weight: 420; line-height: 1.78; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.room-home__internship-slide > strong { display: flex; align-items: baseline; gap: 8px; margin-top: 24px; color: #8d4e3a; font-size: 1.04rem; font-weight: 560; letter-spacing: -0.02em; }
+.room-home__internship-slide > strong small { color: rgb(141 78 58 / 0.78); font-size: 0.62rem; font-weight: 650; letter-spacing: 0.05em; }
 .room-home__carousel-controls { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; margin-top: 4px; }
 .room-home__carousel-controls > button, .room-home__internship-all { padding: 0 0 4px; border: 0; border-bottom: 1px solid rgb(154 92 63 / 0.45); background: transparent; color: #8d4e3a; cursor: pointer; font: inherit; font-size: 0.74rem; }
 .room-home__carousel-pages { display: flex; align-items: center; justify-content: center; gap: 7px; }
@@ -122,9 +128,92 @@
 .room-home__internship-all { margin-top: 22px; font-size: 0.8rem; text-align: left; }
 .room-home__carousel-controls button:hover, .room-home__internship-all:hover { color: #6f3829; border-color: #6f3829; }
 @keyframes room-internship-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.room-home__index-grid { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 20px; border-top: 1px solid rgb(83 49 24 / 0.18); }
-.room-home__index-grid button { padding: 0; border: 0; background: transparent; color: rgb(63 40 26 / 0.62); cursor: pointer; font: inherit; font-size: 0.74rem; text-align: left; transition: color 180ms ease, transform 180ms ease; }
-.room-home__index-grid button:hover { color: #8d4e3a; transform: translateY(-1px); }
+.room-home__internship-timeline { position: relative; width: calc(100% + 31px); height: min(62vh, 524px); min-height: 444px; margin: 22px 0 0 -28px; overflow: hidden; }
+.room-home__internship-timeline-line { position: absolute; top: 16px; bottom: 16px; left: 8px; width: 1px; background: rgb(141 78 58 / 0.28); }
+.room-home__internship-timeline-list { position: relative; display: grid; gap: 16px; height: 100%; align-content: center; }
+.room-home__internship-timeline-item { position: relative; display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 14px; min-height: 78px; opacity: 0.46; transform: scale(0.94); transform-origin: left center; transition: opacity 420ms ease, transform 420ms ease; }
+.room-home__internship-timeline-item.is-active { min-height: 244px; opacity: 1; transform: scale(1); animation: room-timeline-slide-up 520ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.room-home__internship-timeline-node { position: relative; z-index: 1; display: block; width: 9px; height: 9px; margin: 12px 0 0 4px; border: 2px solid #f1e7d5; border-radius: 50%; background: #9a5c3f; box-shadow: 0 0 0 1px #9a5c3f; }
+.room-home__internship-timeline-item.is-active .room-home__internship-timeline-node { width: 11px; height: 11px; margin: 16px 0 0 3px; background: #75422e; box-shadow: 0 0 0 4px rgb(141 78 58 / 0.13); }
+.room-home__internship-timeline-content { min-width: 0; padding: 8px 0; }
+.room-home__internship-timeline-item.is-active .room-home__internship-timeline-content { padding: 14px 18px 18px; border-left: 2px solid #9a5c3f; background: rgb(255 250 240 / 0.52); }
+.room-home__internship-timeline-content time { display: block; margin-bottom: 7px; color: rgb(63 40 26 / 0.58); font-size: 0.72rem; font-variant-numeric: tabular-nums; line-height: 1.4; }
+.room-home__internship-timeline-item:not(.is-active) .room-home__internship-summary-brand { gap: 8px; font-size: 0.72rem; }
+.room-home__internship-timeline-item:not(.is-active) .room-home__summary-logo { width: 62px; height: 22px; }
+.room-home__internship-timeline-item:not(.is-active) .room-home__summary-logo img { width: 60px; height: 20px; }
+.room-home__internship-timeline-item:not(.is-active) .room-home__summary-logo.is-grid { width: 64px; height: 22px; }
+.room-home__internship-timeline-item:not(.is-active) .room-home__summary-logo.is-grid img { width: 62px; height: 19px; }
+.room-home__internship-timeline-item h2 { max-width: none; margin: 8px 0 0; color: #3f281a; font-size: 0.98rem; font-weight: 560; letter-spacing: -0.025em; line-height: 1.25; }
+.room-home__internship-timeline-item.is-active h2 { margin-top: 10px; font-size: 18px; line-height: 1.2; }
+.room-home__internship-timeline-item.is-active .room-home__internship-proof { margin-top: 16px; font-size: 14.5px; line-height: 1.68; -webkit-line-clamp: 3; }
+.room-home__internship-timeline-item.is-active > .room-home__internship-timeline-content > strong { display: flex; align-items: baseline; gap: 0.75em; margin-top: 14px; font-size: 12px; }
+.room-home__internship-timeline-item.is-active > .room-home__internship-timeline-content > strong small { font-size: 10px; }
+@keyframes room-timeline-slide-up { from { opacity: 0.35; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.room-home__internship-detail { position: relative; z-index: 1; height: 100%; box-sizing: border-box; padding: clamp(20px, 2.2vw, 34px); overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.room-home__internship-detail .room-home__internship-stack { width: 100%; max-width: none; }
+.room-home__internship-detail-heading { color: #633c2b; }
+.room-home__internship-detail-heading h2 { margin: 0; font-size: clamp(1.35rem, 1.8vw, 1.72rem); font-weight: 580; letter-spacing: -0.035em; }
+.room-home__internship-detail-heading > div { color: rgb(63 40 26 / 0.56); }
+.room-home__internship-detail-heading span { font-size: 0.69rem; font-variant-numeric: tabular-nums; letter-spacing: 0.08em; white-space: nowrap; }
+.room-home__internship-deck { position: relative; min-height: 520px; }
+.room-home__internship-card { border-radius: 0; background: #fffaf0; transform-origin: 50% 92%; }
+.room-home__internship-card { position: relative; min-height: 520px; }
+.room-home__internship-card { z-index: 2; display: flex; max-height: min(72vh, 660px); overflow: hidden; flex-direction: column; border: 0; box-shadow: 0 1px 0 rgb(74 42 24 / 0.12); cursor: pointer; outline: none; transition: box-shadow 180ms ease, transform 180ms ease; }
+.room-home__internship-card:hover { box-shadow: 0 3px 0 color-mix(in srgb, var(--internship-accent, #8d4e3a) 24%, transparent); transform: translateY(-1px); }
+.room-home__internship-card:active { transform: translateY(1px) scale(0.996); }
+.room-home__internship-card:focus-visible { box-shadow: 0 0 0 3px #9a5c3f, 0 24px 52px rgb(74 42 24 / 0.2); }
+.room-home__internship-card.is-dropping { pointer-events: none; animation: room-internship-drop 680ms linear forwards; will-change: transform, opacity, filter; }
+.room-home__internship-card-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 24px; padding: 22px 27px 20px; border-bottom: 1px solid rgb(100 61 38 / 0.13); }
+.room-home__company-logo { display: grid; flex: 0 0 auto; width: 96px; height: 31px; overflow: hidden; place-items: center start; background: transparent; }
+.room-home__company-logo img { display: block; width: 92px; height: 28px; object-fit: contain; object-position: left center; mix-blend-mode: multiply; opacity: 0.94; }
+.room-home__company-logo.is-grid { width: 100px; height: 30px; background: #68783a; }
+.room-home__company-logo.is-grid img { width: 96px; height: 25px; mix-blend-mode: normal; opacity: 1; }
+.room-home__internship-company { display: flex; min-width: 0; align-items: center; gap: 15px; }
+.room-home__internship-company p { margin: 0; color: rgb(63 40 26 / 0.56); font-size: 0.66rem; line-height: 1.45; }
+.room-home__internship-card-header h3 { grid-column: 1 / -1; margin: 10px 0 0; color: #3f281a; font-size: clamp(1.35rem, 1.65vw, 1.62rem); font-weight: 650; letter-spacing: -0.038em; line-height: 1.2; }
+.room-home__internship-card-header time { align-self: start; padding-top: 3px; color: #8f5940; font-size: 0.7rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.room-home__internship-overview { padding: 15px 27px 16px; background: color-mix(in srgb, var(--internship-accent, #8d4e3a) 5%, #fffaf0); border-bottom: 1px solid rgb(100 61 38 / 0.1); }
+.room-home__model-evidence { display: grid; grid-template-columns: 100px minmax(0, 1fr) 88px; align-items: center; gap: 16px; }
+.room-home__evidence-label { color: rgb(93 57 37 / 0.55); font-size: 0.57rem; font-weight: 700; line-height: 1.35; }
+.room-home__model-evidence ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0; padding: 0; list-style: none; }
+.room-home__model-evidence ol li { position: relative; display: grid; justify-items: center; padding: 0 12px; }
+.room-home__model-evidence ol li + li::before { position: absolute; left: -3px; top: 8px; color: color-mix(in srgb, var(--internship-accent, #8d4e3a) 55%, #fffaf0); content: "→"; font-size: 0.62rem; }
+.room-home__model-evidence ol strong { color: #603724; font-size: 0.85rem; font-variant-numeric: tabular-nums; font-weight: 700; }
+.room-home__model-evidence ol span { margin-top: 2px; color: rgb(93 57 37 / 0.56); font-size: 0.54rem; white-space: nowrap; }
+.room-home__model-result { display: grid; padding-left: 16px; border-left: 1px solid rgb(100 61 38 / 0.13); }
+.room-home__model-result strong { color: var(--internship-accent, #75422e); font-size: 1.8rem; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: -0.06em; line-height: 0.95; }
+.room-home__model-result span { margin-top: 5px; color: rgb(93 57 37 / 0.58); font-size: 0.56rem; }
+.room-home__internship-evidence { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; list-style: none; }
+.room-home__internship-evidence li { display: flex; align-items: baseline; gap: 3px; }
+.room-home__internship-evidence strong { color: var(--internship-accent, #75422e); font-size: 0.76rem; font-variant-numeric: tabular-nums; font-weight: 700; }
+.room-home__internship-evidence span { color: rgb(93 57 37 / 0.55); font-size: 0.54rem; }
+.room-home__internship-content { min-height: 0; padding: 20px 30px 22px; }
+.room-home__internship-card-body { min-height: 0; overflow-y: auto; padding: 0; scrollbar-color: rgb(154 92 63 / 0.42) transparent; scrollbar-width: thin; }
+.room-home__internship-card-body ol { margin: 0; padding: 0; list-style: none; counter-reset: internship-item; }
+.room-home__internship-card-body li { display: grid; grid-template-columns: 30px minmax(170px, 28%) minmax(0, 1fr); gap: 2px 14px; padding: 0 0 17px; color: rgb(63 40 26 / 0.84); font-size: clamp(0.82rem, 0.86vw, 0.92rem); line-height: 1.72; }
+.room-home__internship-card-body li:last-child { padding-bottom: 0; }
+.room-home__internship-card-body li::before { grid-row: 1 / span 2; padding-top: 1px; color: rgb(93 57 37 / 0.58); content: counter(internship-item, decimal-leading-zero); counter-increment: internship-item; font-size: 0.6rem; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: 0.04em; }
+.room-home__internship-card.is-film-log .room-home__internship-card-body li::before { color: var(--internship-accent, #9a5c3f); content: "00:0" counter(internship-item); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -0.04em; }
+.room-home__internship-card-body strong { color: #563323; font-weight: 600; }
+.room-home__jingrui-link { display: inline-flex; align-items: baseline; gap: 0.22em; margin-inline-end: 0.45em; color: #563323; font-weight: 650; text-decoration-color: rgb(86 51 35 / 0.35); text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+.room-home__jingrui-link:hover { color: #c45d2d; text-decoration-color: currentColor; }
+.room-home__jingrui-link:focus-visible { border-radius: 2px; outline: 2px solid #c45d2d; outline-offset: 2px; }
+.room-home__jingrui-link span { font-size: 0.78em; line-height: 1; }
+.room-home__responsibility-label { display: block; grid-column: 2; color: #77452f; font-weight: 650; line-height: 1.55; white-space: normal; }
+.room-home__responsibility-copy { display: block; grid-column: 3; min-width: 0; }
+.room-home__internship-detail .room-home__internship-card { max-height: none; overflow: visible; min-height: 520px; }
+.room-home__internship-detail .room-home__internship-card-body { overflow: visible; }
+.room-home__internship-detail .room-home__internship-card-header h3 { white-space: normal; }
+.room-home__internship-detail .room-home__internship-card-body ol { max-width: none; }
+.room-home__paper-card--internships { background: transparent !important; }
+.room-home__paper-card--internships::before { display: none; }
+@keyframes room-internship-drop {
+  0% { filter: blur(0); opacity: 1; transform: translate3d(0, 0, 0); }
+  20% { filter: blur(0); opacity: 1; transform: translate3d(0, 2vh, 0); }
+  45% { filter: blur(0.15px); opacity: 1; transform: translate3d(0, 14vh, 0); }
+  70% { filter: blur(0.65px); opacity: 0.78; transform: translate3d(0, 44vh, 0); }
+  100% { filter: blur(1.5px); opacity: 0.08; transform: translate3d(0, 112vh, 0); }
+}
 .room-home__quick-nav.is-suppressed { opacity: 0; transform: translateY(5px); pointer-events: none; }
 
 
@@ -161,7 +250,7 @@
 
 .room-home__paper-overlay { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; }
 .room-home__overlay-backdrop { position: absolute; inset: 0; border: 0; background: rgb(28 17 10 / 0.82); cursor: pointer; }
-.room-home__paper-viewer { position: relative; z-index: 1; width: min(820px, 78vw); max-height: calc(100dvh - 48px); }
+.room-home__paper-viewer { position: relative; z-index: 1; width: min(820px, 78vw); max-height: calc(100dvh - 48px); box-sizing: border-box; }
 .room-home__paper-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
 .room-home__paper-tabs button { border: 1px solid rgb(255 236 195 / 0.28); border-radius: 999px; padding: 9px 16px; background: rgb(70 39 20 / 0.72); color: rgb(255 244 218 / 0.72); cursor: pointer; font-size: 0.8rem; }
 .room-home__paper-tabs button.is-active { border-color: #ffe0ae; background: #ffe0ae; color: #46240f; }
@@ -184,8 +273,11 @@
 .room-home__paper-footer { margin: 16px 0 0; color: rgb(255 244 218 / 0.68); font-size: 0.78rem; text-align: center; }
 
 @media (prefers-reduced-motion: reduce) {
-  .room-home__study-video, .room-home__internship-slide { animation: none; transition: none; }
+  .room-home__study-video, .room-home__internship-card { transition: none; }
+  .room-home__internship-card.is-dropping { animation: room-internship-fade 120ms ease-out forwards; }
 }
+
+@keyframes room-internship-fade { to { opacity: 0; } }
 
 @media (max-width: 900px) {
   .room-home__hud { padding: 28px; }
@@ -233,6 +325,7 @@
 
 .room-home__paper-overlay { padding: clamp(22px, 4vw, 58px); }
 .room-home__paper-viewer { width: min(1260px, calc(100vw - 64px)); max-height: min(900px, calc(100dvh - 44px)); padding: clamp(24px, 3vw, 44px); border: 0; border-radius: 0; background: #21170f; box-shadow: none; }
+.room-home__paper-overlay--detail .room-home__paper-viewer { height: min(900px, calc(100dvh - 44px)); overflow: hidden; }
 .room-home__paper-overlay--detail .room-home__paper-header { display: none; }
 .room-home__paper-overlay--detail .room-home__paper-close { position: absolute; top: 18px; right: 22px; z-index: 3; border: 0; }
 .room-home__paper-header { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
@@ -264,25 +357,67 @@
 .room-home__folder-tile .folder-component__label,
 .room-home__selected-folder .folder-component__label { display: none; }
 
-.room-home__experience-layout { display: grid; grid-template-columns: minmax(250px, 0.31fr) minmax(0, 1fr); gap: 32px; min-height: 570px; }
-.room-home__folder-rail { display: flex; min-height: 0; flex-direction: column; align-items: center; padding: 18px 12px 20px; }
+.room-home__experience-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; height: 100%; min-height: 0; align-items: stretch; }
+.room-home__folder-rail { display: flex; min-height: 0; flex-direction: column; align-items: stretch; gap: 16px; padding: 32px 10px 20px; }
 .room-home__back-button { align-self: flex-start; border: 0; background: transparent; color: rgb(255 235 190 / 0.88); cursor: pointer; font-size: 0.82rem; text-decoration: underline; text-underline-offset: 4px; }
 .room-home__back-button:hover { color: #ffe6ad; }
-.room-home__selected-folder { width: 100%; margin-top: 28px; display: grid; place-items: center; }
+.room-home__selected-folder { width: 100%; margin-top: 0; display: grid; place-items: center; }
+.room-home__selected-folder .folder-component { position: static; margin: 0; }
 .room-home__selected-folder-label { display: none; }
-.room-home__folder-switcher { display: grid; width: 100%; gap: 7px; margin-top: auto; }
-.room-home__folder-switcher button { border: 0; border-bottom: 1px solid rgb(255 236 195 / 0.16); border-radius: 0; padding: 10px 8px; background: transparent; color: rgb(255 244 218 / 0.68); cursor: pointer; font-size: 0.75rem; text-align: left; transition: border-color 180ms ease, color 180ms ease, background 180ms ease; }
+.room-home__folder-switcher { display: grid; width: 100%; gap: 7px; margin-top: 0; }
+.room-home__folder-switcher button { border: 0; border-bottom: 1px solid rgb(255 236 195 / 0.22); border-radius: 0; padding: 10px 8px; background: transparent; color: rgb(255 244 218 / 0.82); cursor: pointer; font-size: 0.75rem; text-align: left; transition: border-color 180ms ease, color 180ms ease, background 180ms ease; }
 .room-home__folder-switcher button:hover { border-bottom-color: #f2d29b; color: #f2d29b; }
-.room-home__folder-switcher button.is-active { border-bottom-color: transparent; box-shadow: inset 0 -3px 0 #f2d29b; background: transparent; color: #f2d29b; font-weight: 650; }
-.room-home__experience-layout > .room-home__paper-card { min-height: 0; max-height: min(650px, calc(100dvh - 260px)); overflow-y: auto; border: 0; border-radius: 0; background: #f8f0df; box-shadow: none; }
-.room-home__experience-layout .room-home__paper-copy { width: auto; margin: 0; padding: clamp(32px, 4vw, 60px) clamp(24px, 4vw, 64px); border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-.room-home__experience-layout .room-home__paper-copy h2 { font-size: clamp(2rem, 3.3vw, 3rem); }
+.room-home__folder-switcher button.is-active { border-bottom: 2px solid #f2d29b; box-shadow: none; background: transparent; color: #f2d29b; font-weight: 650; }
+.room-home__experience-layout > .room-home__paper-card { height: 100%; min-height: 0; max-height: none; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; border: 0; border-radius: 0; background: #f8f0df; box-shadow: none; }
+.room-home__experience-layout .room-home__paper-copy { width: auto; min-height: 0; margin: 0; padding: clamp(24px, 3vw, 40px) clamp(24px, 4vw, 56px); border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.room-home__experience-layout--projects > .room-home__paper-card,
+.room-home__experience-layout--campus > .room-home__paper-card,
+.room-home__experience-layout--skills > .room-home__paper-card { width: min(820px, 100%); height: 560px; align-self: center; justify-self: center; }
+.room-home__experience-layout--projects .room-home__paper-copy,
+.room-home__experience-layout--campus .room-home__paper-copy,
+.room-home__experience-layout--skills .room-home__paper-copy { display: flex; height: 100%; box-sizing: border-box; flex-direction: column; justify-content: center; padding: 36px 48px; }
+.room-home__experience-layout .room-home__paper-copy h2 { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.035em; line-height: 1.1; }
 .room-home__count { display: inline-block; margin-top: 14px; padding-top: 6px; border-top: 1px solid rgb(197 110 86 / 0.55); color: #8d4e3a; font-size: 0.72rem; letter-spacing: 0.08em; }
 .room-home__experience-layout .room-home__paper-copy > p:not(.room-home__paper-label) { max-width: 58ch; color: #5a4637; line-height: 1.8; }
 .room-home__experience-layout .room-home__entry ul { max-width: 62ch; }
 .room-home__paper-label { color: #c56e56; }
 .room-home__paper-footer { margin-top: 22px; }
 .room-home__paper-footer a { color: rgb(255 220 157 / 0.72); text-underline-offset: 3px; }
+
+.room-home__detail-intro { padding-bottom: 18px; border-bottom: 1px solid rgb(83 49 24 / 0.2); }
+.room-home__paper-copy--projects .room-home__detail-intro { border-bottom: 0; }
+.room-home__detail-intro h2 { margin: 0; }
+.room-home__detail-intro p { max-width: none; margin: 12px 0 0; color: #5a4637; font-size: 0.94rem; line-height: 1.6; }
+.room-home__structured-entry { padding-top: 20px; }
+.room-home__structured-entry .room-home__entry-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: start; }
+.room-home__structured-entry .room-home__entry-heading h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.25; }
+.room-home__structured-entry .room-home__entry-heading p { margin-top: 8px; font-size: 0.88rem; line-height: 1.5; }
+.room-home__structured-entry .room-home__entry-heading time { padding-top: 6px; font-size: 0.75rem; line-height: 1.5; }
+.room-home__project-grid, .room-home__education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 30px; margin-top: 22px; }
+.room-home__project-grid section, .room-home__education-grid section { padding-top: 12px; border-top: 1px solid rgb(169 94 67 / 0.42); }
+.room-home__project-grid section > span, .room-home__education-grid section > span, .room-home__skills-grid > div > span { display: block; margin-bottom: 9px; color: #8d4e3a; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; }
+.room-home__project-grid p, .room-home__education-grid p { margin: 0; color: #3f2d22; font-size: 0.92rem; line-height: 1.65; }
+.room-home__education-grid section { display: grid; gap: 13px; align-content: start; }
+.room-home__education-timeline { position: relative; display: grid; gap: 18px; margin-top: 14px; }
+.room-home__education-timeline::before { position: absolute; top: 11px; bottom: 11px; left: 142px; width: 1px; background: rgb(169 94 67 / 0.42); content: ""; }
+.room-home__education-timeline-item { position: relative; display: grid; grid-template-columns: 124px 36px minmax(0, 1fr); gap: 0; align-items: start; }
+.room-home__education-timeline-item > time { padding-top: 2px; color: #8d4e3a; font-size: 0.72rem; font-variant-numeric: tabular-nums; line-height: 1.4; white-space: nowrap; }
+.room-home__education-timeline-node { position: relative; z-index: 1; display: block; width: 9px; height: 9px; margin: 5px auto 0; border: 2px solid #f8f0df; border-radius: 50%; background: #b7644f; box-shadow: 0 0 0 1px #b7644f; }
+.room-home__education-timeline-item > div { padding-left: 20px; }
+.room-home__education-timeline-item h4 { display: flex; flex-wrap: wrap; gap: 4ch; margin: 0 0 10px; color: #432715; font-size: 1.12rem; font-weight: 650; letter-spacing: -0.025em; }
+.room-home__education-timeline-item h4 span { color: #75422e; font-size: 0.86rem; font-variant-numeric: tabular-nums; font-weight: 520; letter-spacing: 0; }
+.room-home__education-timeline-item p { margin: 0 0 10px; color: #3f2d22; font-size: 0.86rem; line-height: 1.65; }
+.room-home__education-timeline-item p:last-child { margin-bottom: 0; }
+.room-home__fact-strip { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 17px; border-top: 1px solid rgb(83 49 24 / 0.17); }
+.room-home__fact-strip span { color: #8d4e3a; font-size: 0.76rem; font-variant-numeric: tabular-nums; }
+.room-home__skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; margin-top: 18px; }
+.room-home__paper-copy--skills .room-home__structured-entry { padding-top: 0; }
+.room-home__skills-grid > div { display: grid; min-height: 88px; align-content: center; padding-top: 12px; border-top: 1px solid rgb(169 94 67 / 0.42); }
+.room-home__skills-grid > div p { margin: 0; color: #3f2d22; font-size: 0.94rem; line-height: 1.65; }
+.room-home__skills-grid > .room-home__fact-strip { padding-top: 17px; border-top-color: rgb(83 49 24 / 0.17); }
+.room-home__paper-copy--projects .room-home__project-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.room-home__paper-copy--projects .room-home__fact-strip { width: 100%; min-height: 0; align-items: center; margin-top: 2px; padding: 15px 0 0; border: 0; border-top: 1px solid rgb(141 78 58 / 0.28); background: transparent; box-shadow: none; }
+.room-home__paper-copy--projects .room-home__fact-strip span { font-size: 0.88rem; font-weight: 650; letter-spacing: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .room-home__greeting-card, .room-home__folder-tile, .room-home__greeting-links, .room-home__greeting-links a { animation: none; transition: none; }
@@ -300,29 +435,86 @@
   .room-home__title-block { max-width: 340px; padding: 10px 12px 12px; }
   .room-home__title-block h1 { font-size: 2.35rem; }
   .room-home__title-block span { font-size: 0.86rem; }
-  .room-home__quick-nav { right: 28px; top: auto; bottom: 28px; width: min(360px, calc(100vw - 56px)); min-height: 0; }
-  .room-home__quick-nav { padding: 16px 18px; border: 0; background: rgb(48 29 18 / 0.82); color: #fff8e9; text-shadow: 0 2px 18px rgb(38 20 9 / 0.62); }
-  .room-home__internship-carousel { padding: 0; }
-  .room-home__internship-heading { color: #f4cb88; }
-  .room-home__internship-slide { min-height: 0; }
-  .room-home__internship-slide h2 { margin: 10px 0 6px; color: #fff8e9; font-size: 1.35rem; }
-  .room-home__internship-meta { color: rgb(255 248 233 / 0.68); }
-  .room-home__internship-meta time, .room-home__internship-proof, .room-home__internship-slide > strong, .room-home__internship-all, .room-home__index-grid { display: none; }
-  .room-home__carousel-controls { margin-top: 14px; }
-  .room-home__carousel-controls > button { border-color: rgb(255 224 174 / 0.42); color: #ffe0ae; }
+  .room-home__quick-nav { right: 14px; top: auto; bottom: 14px; width: calc(100vw - 28px); min-height: 0; padding: 0; background: transparent; }
+  .room-home__internship-carousel { max-width: none; padding: 0 4px 16px; }
+  .room-home__internship-heading { margin: 0 0 9px; color: #fff8e9; text-shadow: 0 2px 14px rgb(38 20 9 / 0.75); }
+  .room-home__internship-heading p { font-size: 0.67rem; }
+  .room-home__internship-carousel > .room-home__internship-heading { margin-left: -4px; }
+  .room-home__internship-carousel > .room-home__internship-heading p { font-size: calc(0.67rem + 4px); }
+  .room-home__internship-slide { min-height: 240px; }
+  .room-home__internship-slide h2 { margin: 13px 0 9px; font-size: 1.5rem; }
+  .room-home__internship-summary-brand { gap: 9px; color: #ffe0ae; font-size: 0.84rem; }
+  .room-home__summary-logo { width: 74px; height: 28px; }
+  .room-home__summary-logo img { width: 70px; height: 25px; }
+  .room-home__summary-logo.is-grid { width: 78px; height: 27px; }
+  .room-home__summary-logo.is-grid img { width: 76px; height: 23px; }
+  .room-home__internship-meta { color: rgb(255 248 233 / 0.7); }
+  .room-home__internship-proof { margin-top: 14px; color: rgb(255 248 233 / 0.88); font-size: 0.86rem; line-height: 1.6; -webkit-line-clamp: 3; }
+  .room-home__internship-slide > strong { margin-top: 16px; color: #ffe0ae; font-size: 1.02rem; }
+  .room-home__internship-slide > strong small { color: rgb(255 224 174 / 0.7); }
+  .room-home__internship-timeline { width: calc(100% + 12px); height: 390px; min-height: 0; margin: 14px 0 0 -12px; }
+  .room-home__internship-timeline-item { min-height: 58px; gap: 10px; }
+  .room-home__internship-timeline-item.is-active { min-height: 218px; }
+  .room-home__internship-timeline-item.is-active .room-home__internship-timeline-content { padding: 12px 13px 14px; }
+  .room-home__internship-timeline-item.is-active h2 { font-size: 18px; }
+  .room-home__internship-timeline-item.is-active .room-home__internship-proof { font-size: 14.5px; }
+  .room-home__carousel-controls { gap: 10px; }
+  .room-home__carousel-controls > button, .room-home__internship-all { color: #ffe0ae; border-color: rgb(255 224 174 / 0.46); font-size: 0.68rem; }
   .room-home__carousel-pages button { background: rgb(255 248 233 / 0.24); }
-  .room-home__carousel-pages button.is-active { background: #f4cb88; }
-  .room-home__carousel-pages span { color: rgb(255 248 233 / 0.56); }
+  .room-home__carousel-pages button.is-active { background: #ffe0ae; }
+  .room-home__carousel-pages span { color: rgb(255 248 233 / 0.7); }
+  .room-home__internship-all { margin-top: 16px; }
+  .room-home__internship-deck, .room-home__internship-card, .room-home__internship-detail .room-home__internship-card { min-height: 0; }
+  .room-home__internship-card { max-height: min(64dvh, 590px); }
+  .room-home__internship-card-header { grid-template-columns: 82px minmax(0, 1fr); gap: 12px; padding: 15px 16px 13px; }
+  .room-home__company-logo { width: 82px; height: 36px; }
+  .room-home__company-logo img { width: 72px; height: 28px; }
+  .room-home__internship-card-header { grid-template-columns: minmax(0, 1fr) 94px; }
+  .room-home__internship-card-header time { grid-column: auto; padding: 0; }
+  .room-home__internship-company { gap: 9px; }
+  .room-home__internship-company p { font-size: 0.64rem; }
+  .room-home__internship-card-header h3 { font-size: 1.08rem; }
+  .room-home__internship-card-body { padding: 16px 18px 8px; }
+  .room-home__internship-detail { padding: 18px 14px 32px; }
+  .room-home__internship-detail-heading { margin: 0 0 12px; color: #633c2b; text-shadow: none; }
+  .room-home__internship-detail-heading h2 { font-size: 1.16rem; }
+  .room-home__internship-detail-heading > div { color: rgb(63 40 26 / 0.56); }
+  .room-home__internship-detail-heading span { font-size: 0.6rem; }
+  .room-home__internship-detail .room-home__internship-card-header h3 { white-space: normal; }
+  .room-home__internship-card-body ol { grid-template-columns: 1fr; }
+  .room-home__internship-card-body li { display: block; padding-top: 21px; font-size: 0.78rem; }
+  .room-home__responsibility-label { display: block; margin-bottom: 2px; white-space: normal; }
   .room-home__greeting-card { top: auto; right: 18px; bottom: 74px; width: min(330px, calc(100vw - 36px)); padding: 16px 18px 18px; }
-  .room-home__paper-viewer { width: calc(100vw - 28px); max-height: calc(100dvh - 28px); padding: 20px; overflow-y: auto; }
+  .room-home__paper-viewer { width: calc(100vw - 28px); height: min(900px, calc(100svh - 28px)); max-height: calc(100svh - 28px); padding: 20px; overflow-y: auto; }
   .room-home__folder-grid { grid-template-columns: 1fr; }
   .room-home__folder-tile { min-height: 250px; }
   .room-home__experience-layout { grid-template-columns: 1fr; gap: 18px; }
   .room-home__folder-rail { display: grid; grid-template-columns: auto 72px minmax(0, 1fr); align-items: center; gap: 14px; min-height: 0; padding: 4px 0 10px; }
   .room-home__selected-folder { width: 72px; margin: 0; }
-  .room-home__selected-folder .folder-component { transform: scale(0.4); transform-origin: center; margin: -42px -34px; }
+  .room-home__selected-folder .folder-component { position: static; left: auto; transform: scale(0.4); transform-origin: center; margin: -42px -34px; }
   .room-home__folder-switcher { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 0; }
   .room-home__experience-layout > .room-home__paper-card { max-height: none; }
+  .room-home__experience-layout--projects > .room-home__paper-card,
+  .room-home__experience-layout--campus > .room-home__paper-card,
+  .room-home__experience-layout--skills > .room-home__paper-card { width: 100%; height: auto; align-self: stretch; }
+  .room-home__experience-layout--projects .room-home__paper-copy,
+  .room-home__experience-layout--campus .room-home__paper-copy,
+  .room-home__experience-layout--skills .room-home__paper-copy { height: auto; padding: 28px 24px; }
+  .room-home__experience-layout .room-home__paper-copy h2 { font-size: 2rem; }
+  .room-home__detail-intro { grid-template-columns: 1fr; gap: 14px; padding-bottom: 20px; }
+  .room-home__detail-intro p { margin-top: 12px; line-height: 1.65; }
+  .room-home__structured-entry { padding-top: 22px; }
+  .room-home__structured-entry .room-home__entry-heading { grid-template-columns: 1fr; gap: 8px; }
+  .room-home__structured-entry .room-home__entry-heading time { padding-top: 0; }
+  .room-home__project-grid, .room-home__education-grid, .room-home__skills-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+  .room-home__education-timeline { gap: 22px; margin-top: 22px; }
+  .room-home__education-timeline::before { left: 7px; top: 12px; bottom: 12px; }
+  .room-home__education-timeline-item { grid-template-columns: 1fr; gap: 8px; padding-left: 26px; }
+  .room-home__education-timeline-item > time { padding-top: 0; }
+  .room-home__education-timeline-node { position: absolute; top: 0; left: 3px; margin: 3px 0 0; }
+  .room-home__education-timeline-item > div { padding-left: 0; }
+  .room-home__fact-strip { gap: 7px 14px; }
+  .room-home__paper-copy--projects .room-home__fact-strip { width: 100%; min-height: 72px; margin-top: 0; padding: 14px 16px; }
   .room-home__folder-switcher { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .room-home__folder-switcher button { padding: 9px 6px; font-size: 0.7rem; text-align: center; }
 }
